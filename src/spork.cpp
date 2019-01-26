@@ -1,5 +1,6 @@
-// Copyright (c) 2014-2016 The Dash developers
-// Copyright (c) 2016-2017 The POSQ developers
+// Copyright (c) 2014-2015 The Dash developers
+// Copyright (c) 2015-2018 The PIVX developers
+// Copyright (c) 2018-2019 The POSQ developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -319,7 +320,7 @@ std::string CSporkManager::GetSporkNameByID(int id)
 	if (id == SPORK_16_ZEROCOIN_MAINTENANCE_MODE) return "SPORK_16_ZEROCOIN_MAINTENANCE_MODE";
 	if (id == SPORK_17_TREASURY_PAYMENT_ENFORCEMENT) return "SPORK_17_TREASURY_PAYMENT_ENFORCEMENT";
 	if (id == SPORK_18_REVIVE_PAYMENT_ENFORCEMENT) return "SPORK_18_REVIVE_PAYMENT_ENFORCEMENT";
-	if (id == SPORK_19_NEW_PROTOCOL_ENFORCEMENT_3) return "SPORK_16_NEW_PROTOCOL_ENFORCEMENT_3";
+	if (id == SPORK_19_NEW_PROTOCOL_ENFORCEMENT_3) return "SPORK_19_NEW_PROTOCOL_ENFORCEMENT_3";
 
 	return "Unknown";
 }

@@ -1,8 +1,8 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2017 The PIVX developers
-// Copyright (c) 2018 The POSQ developers
+// Copyright (c) 2015-2018 The PIVX developers
+// Copyright (c) 2018-2019 The POSQ developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -57,12 +57,22 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
 
-    (0, uint256("0x00000afed892c787c80d30221f112c4611013cf366b574cc9cf6149415a93957"));
+    (0, uint256("0x00000afed892c787c80d30221f112c4611013cf366b574cc9cf6149415a93957"))
+    (150, uint256("0x0000007e1126eb31b9fb121ee9998a1978d35cad07e40d4f20e49d5d1273db1d"))
+    (187, uint256("0x000006cc8759be9010c3886dc2c6f3d1499be82ceacca191ca37307c551f7c99"))
+    (300, uint256("0x00000dc2f4498de11a9422abd4dd87b2b9d84e9135ab7982407178255a4e9a6c"))
+    (600, uint256("0x2e95031c1e4eecd2cd3879b6572adb6ee6b480d429a6e13b1adbdc4539cb90df"))
+    (1200, uint256("0xb81736ef9ffb8620b2f50088a08efff49496a1cf5b81f926a23c8c6c9eb53a3b"))
+    (1800, uint256("0xb3b672c7845ddaf0ce2450d15dd15d5fe4951781ba242d00e6f778524835a54f"))
+    (2400, uint256("0x28e65007cb1790fe87b7af7fa35b5728bfc88fbe6dc55df641fd11bf33a3dbdc"))
+    (3000, uint256("0xa3fb3e642c502501f3f363da819fa4dc83b74893e0cce6802f4be2590d2f7b0e"))
+    (11111, uint256("0x3be6f069ab16ddf8ab9cddee1c99e6c366243123d736a9ed5b245ef94bb380d9"))
+    (24453, uint256("0x2dcbafa6b16282b79511d22a9377c2428ba79a67e5b06c9cdb2502cab2ecc15e"));
 
 static const Checkpoints::CCheckpointData data = {
 	&mapCheckpoints,
-	1546206065, // * UNIX timestamp of last checkpoint block
-	0,          // * total number of transactions between genesis and last checkpoint
+    1548444999, // * UNIX timestamp of last checkpoint block
+	          // * total number of transactions between genesis and last checkpoint
 				//   (the tx=... number in the SetBestChain debug.log lines)
 				2000        // * estimated number of transactions per day after checkpoint, was 2000
 };
@@ -171,8 +181,10 @@ public:
 		assert(genesis.hashMerkleRoot == uint256("0x5631b0ce092246abb7f7cbf0a6ee315bd7cf41092a714c7ece4c1aed15dd3995"));
 
 		//Teams Seeder
-		vSeeds.push_back(CDNSSeedData("173.255.231.7", "173.255.231.7"));
+		vSeeds.push_back(CDNSSeedData("seed.posq.space", "seed.posq.space"));
 		//Seeds	Community Nodes
+		vSeeds.push_back(CDNSSeedData("posq.seeds.mn.zone", "posq.seeds.mn.zone"));
+		vSeeds.push_back(CDNSSeedData("posq.mnseeds.com", "posq.mnseeds.com"));
 		vSeeds.push_back(CDNSSeedData("207.246.112.156", "207.246.112.156"));
 
 
@@ -274,7 +286,7 @@ public:
 		nMinerThreads = 0;
 		nTargetTimespan = 1 * 60; // POSQ: 1 day
 		nTargetSpacing = 1 * 60;  // POSQ: 1 minute
-		nLastPOWBlock = 200;
+		nLastPOWBlock = 400;
 		nMaturity = 10;
 		nMasternodeCountDrift = 4;
 		nModifierUpdateBlock = 51197; //approx Mon, 17 Apr 2017 04:00:00 GMT
@@ -297,10 +309,11 @@ public:
 		assert(hashGenesisBlock == uint256("0x0000073f1de9d1268731bff93d98a357572d1665aed31e5893961dc3d96a8032"));
 		assert(genesis.hashMerkleRoot == uint256("0x5631b0ce092246abb7f7cbf0a6ee315bd7cf41092a714c7ece4c1aed15dd3995"));
 
-		vFixedSeeds.clear();
-		vSeeds.clear();
-
-
+        	vFixedSeeds.clear();
+        	vSeeds.clear();
+		//Testnet Community Nodes
+		vSeeds.push_back(CDNSSeedData("207.246.95.9", "207.246.95.9"));
+		vSeeds.push_back(CDNSSeedData("140.82.61.65", "140.82.61.65"));
 
 		base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 139); // Testnet posq addresses start with 'x' or 'y'
 		base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 19);  // Testnet posq script addresses start with '8' or '9'
@@ -323,7 +336,7 @@ public:
 		fTestnetToBeDeprecatedFieldRPC = true;
 
 		nPoolMaxTransactions = 2;
-		strSporkKey = "030262a2a0679d01ab026d375c42b0a4122477123631b870e09665526c322c8899";
+		strSporkKey = "034fa3a5a557ca5a0f86b676c55e855195e21ebf4e44b3c11a2ebce8600171346d";
 		strObfuscationPoolDummyAddress = "XCNAsFGy8k7amqRG26ikKyfVDwK8585Z6b";
 		nStartMasternodePayments = 1534438799;
 		nBudget_Fee_Confirmations = 3; // Number of confirmations for the finalization fee. We have to make this very short
