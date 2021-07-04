@@ -6,12 +6,11 @@ reset-files.bash
 *.tar.gz
 
 *.exe
-src/poseidon
-src/poseidond
-src/poseidon-cli
-src/poseidon-tx
-src/test/test_poseidon
-src/qt/test/test_poseidon-qt
+src/posq
+src/posq-cli
+src/posq-tx
+src/test/test_posq
+src/qt/test/test_posq-qt
 
 # autoreconf
 Makefile.in
@@ -37,8 +36,8 @@ confdefs.h
 conftest.cpp
 conftest.err
 libtool
-src/config/poseidon-config.h
-src/config/poseidon-config.h.in
+src/config/posq-config.h
+src/config/posq-config.h.in
 src/config/stamp-h1
 share/setup.nsi
 share/qt/Info.plist
@@ -63,7 +62,7 @@ src/qt/test/moc*.cpp
 *.pyc
 *.o
 *.o-*
-.poseidon
+.posq
 *.a
 *.pb.cc
 *.pb.h
@@ -82,12 +81,12 @@ src/qt/test/moc*.cpp
 # Compilation and Qt preprocessor part
 *.qm
 Makefile
-poseidon-qt
-poseidon-Qt.app
+posq-qt
+posq-Qt.app
 
 # Unit-tests
 Makefile.test
-poseidon-qt_test
+posq-qt_test
 src/test/buildenv.py
 
 # Resources cpp
@@ -103,7 +102,7 @@ build
 #lcov
 *.gcno
 /*.info
-test_poseidon.coverage/
+test_posq.coverage/
 total.coverage/
 coverage_percent.txt
 
